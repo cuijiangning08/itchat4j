@@ -21,7 +21,7 @@ import cn.zhouyafeng.itchat4j.utils.tools.CommonTools;
  */
 public class LoginController {
 	private static Logger LOG = LoggerFactory.getLogger(LoginController.class);
-	private ILoginService loginService = new LoginServiceImpl();
+	private LoginServiceImpl loginService = new LoginServiceImpl();
 	private static Core core = Core.getInstance();
 
 	public void login(String qrPath) {

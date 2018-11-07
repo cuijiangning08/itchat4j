@@ -46,6 +46,18 @@ public class WechatTools {
 	}
 
 	/**
+	 * 根据nickName发送文本消息
+	 * 
+	 * @author https://github.com/yaphone
+	 * @date 2017年5月4日 下午10:43:14
+	 * @param msg
+	 * @param toUserName
+	 */
+	public static void sendMsgByNikeName(String msg, String nickName) {
+		MessageTools.sendMsgByNickName(msg, nickName);
+	}
+
+	/**
 	 * <p>
 	 * 通过RealName获取本次UserName
 	 * </p>

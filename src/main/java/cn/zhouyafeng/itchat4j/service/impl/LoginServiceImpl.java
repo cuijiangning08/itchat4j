@@ -388,6 +388,7 @@ public class LoginServiceImpl implements ILoginService {
 				} else if (o.getString("UserName").equals(core.getUserSelf().getString("UserName"))) { // 自己
 					core.getContactList().remove(o);
 				} else { // 普通联系人
+					System.out.println(o.toJSONString());
 					core.getContactList().add(o);
 				}
 			}
@@ -492,10 +493,10 @@ public class LoginServiceImpl implements ILoginService {
 				LOG.info(e.getMessage());
 				return;
 			}
-			//add by 默非默 2017-08-01 22:28:09
-			//如果登录被禁止时，则登录返回的message内容不为空，下面代码则判断登录内容是否为空，不为空则退出程序
+			// add by 默非默 2017-08-01 22:28:09
+			// 如果登录被禁止时，则登录返回的message内容不为空，下面代码则判断登录内容是否为空，不为空则退出程序
 			String msg = getLoginMessage(text);
-			if (!"".equals(msg)){
+			if (!"".equals(msg)) {
 				LOG.info(msg);
 				System.exit(0);
 			}
@@ -670,13 +671,14 @@ public class LoginServiceImpl implements ILoginService {
 
 	/**
 	 * 解析登录返回的消息，如果成功登录，则message为空
+	 * 
 	 * @param result
 	 * @return
 	 */
-	public String getLoginMessage(String result){
+	public String getLoginMessage(String result) {
 		String[] strArr = result.split("<message>");
 		String[] rs = strArr[1].split("</message>");
-		if (rs!=null && rs.length>1) {
+		if (rs != null && rs.length > 1) {
 			return rs[0];
 		}
 		return "";

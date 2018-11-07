@@ -39,7 +39,8 @@ public class SimpleDemo implements IMsgHandlerFace {
 				WechatTools.logout();
 			}
 			if (text.equals("222")) {
-				WechatTools.remarkNameByNickName("yaphone", "Hello");
+				// WechatTools.remarkNameByNickName("凯娜", "Hello");
+				WechatTools.sendMsgByNikeName("测试微信机器人", "凯娜");
 			}
 			if (text.equals("333")) { // 测试群列表
 				System.out.print(WechatTools.getGroupNickNameList());
